@@ -6,3 +6,4 @@ Monday, 28 degrees, Clear
 Tuesday, 36 degrees, Mostly Cloudy
 Wednesday, 32 degrees, Mostly Sunny
 Thursday, 36 degrees, Sunny
+Friday, 36 degrees, Cloudy
