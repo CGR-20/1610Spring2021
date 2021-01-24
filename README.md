@@ -7,3 +7,4 @@ Tuesday, 36 degrees, Mostly Cloudy
 Wednesday, 32 degrees, Mostly Sunny
 Thursday, 36 degrees, Sunny
 Friday, 36 degrees, Cloudy
+Saturday, 34 degrees, Cloudy
