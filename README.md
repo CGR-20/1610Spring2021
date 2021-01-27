@@ -10,3 +10,4 @@ Friday, 36 degrees, Cloudy
 Saturday, 34 degrees, Cloudy
 Monday, 34 degrees, Mostly Cloudy
 Tuesday, 28 degrees, Cloudy
+Wednesday, 25 degrees, Mostly Cloudy
