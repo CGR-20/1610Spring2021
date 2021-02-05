@@ -422,7 +422,6 @@ GameObject:
   m_Component:
   - component: {fileID: 939620226}
   - component: {fileID: 939620225}
-  - component: {fileID: 939620224}
   m_Layer: 0
   m_Name: ballGenerator
   m_TagString: Untagged
@@ -430,19 +429,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &939620224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939620223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7712dff582e24854c9a1344fd954d68a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ball: {fileID: 1428972841}
 --- !u!212 &939620225
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -519,6 +505,7 @@ GameObject:
   - component: {fileID: 1428972842}
   - component: {fileID: 1428972844}
   - component: {fileID: 1428972845}
+  - component: {fileID: 1428972846}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -627,3 +614,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1428972846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428972841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e28fd73f854774d9287aa6219cdfcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 1428972845}
+  direction: {x: 0, y: 0}
+  yDir: {x: 0, y: 0}
+  speed: 3
+  jumpForce: 300
