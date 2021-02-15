@@ -243,7 +243,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -495,6 +495,12 @@ PrefabInstance:
       propertyPath: counterText
       value: 
       objectReference: {fileID: 2035825240}
+    - target: {fileID: 8272226574594312749, guid: cbee8ec3cef85bc40adc6121e24843ad,
+        type: 3}
+      propertyPath: numberCount
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a679cdd8ea38844f945bf2b9fa4be82,
+        type: 2}
     - target: {fileID: 8272226574594312751, guid: cbee8ec3cef85bc40adc6121e24843ad,
         type: 3}
       propertyPath: m_RootOrder
@@ -963,6 +969,12 @@ PrefabInstance:
       propertyPath: counterText
       value: 
       objectReference: {fileID: 2035825240}
+    - target: {fileID: 8272226574594312749, guid: cbee8ec3cef85bc40adc6121e24843ad,
+        type: 3}
+      propertyPath: numberCount
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a679cdd8ea38844f945bf2b9fa4be82,
+        type: 2}
     - target: {fileID: 8272226574594312751, guid: cbee8ec3cef85bc40adc6121e24843ad,
         type: 3}
       propertyPath: m_RootOrder
@@ -1037,6 +1049,12 @@ PrefabInstance:
       propertyPath: counterText
       value: 
       objectReference: {fileID: 2035825240}
+    - target: {fileID: 8272226574594312749, guid: cbee8ec3cef85bc40adc6121e24843ad,
+        type: 3}
+      propertyPath: numberCount
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a679cdd8ea38844f945bf2b9fa4be82,
+        type: 2}
     - target: {fileID: 8272226574594312751, guid: cbee8ec3cef85bc40adc6121e24843ad,
         type: 3}
       propertyPath: m_RootOrder
@@ -1111,6 +1129,12 @@ PrefabInstance:
       propertyPath: counterText
       value: 
       objectReference: {fileID: 2035825240}
+    - target: {fileID: 8272226574594312749, guid: cbee8ec3cef85bc40adc6121e24843ad,
+        type: 3}
+      propertyPath: numberCount
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a679cdd8ea38844f945bf2b9fa4be82,
+        type: 2}
     - target: {fileID: 8272226574594312751, guid: cbee8ec3cef85bc40adc6121e24843ad,
         type: 3}
       propertyPath: m_RootOrder

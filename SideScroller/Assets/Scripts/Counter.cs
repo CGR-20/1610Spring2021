@@ -6,13 +6,18 @@ using UnityEngine.UI;
 public class Counter : MonoBehaviour
 {
     public int creditValue = 3;
-    public int numberCount;
+    public IntData numberCount;
     public Text counterText;
+
+    private void start()
+    {
+        counterText.text = numberCount.value.ToString();
+    }
 
     void OnTriggerEnter2D() // physics based function
     {
-        numberCount += creditValue;
-        counterText.text = numberCount.ToString();
+        numberCount.value += creditValue;
+        counterText.text = numberCount.value.ToString();
         gameObject.SetActive(false); // collects object once
     }
 }
