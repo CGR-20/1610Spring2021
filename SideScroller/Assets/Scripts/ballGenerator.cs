@@ -7,13 +7,17 @@ public class ballGenerator : MonoBehaviour
     public GameObject Ball;
     int counter = 0;
 
-    IEnumerator Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        while (counter < 25)
+        IEnumerator Start()
         {
-            yield return new WaitForSeconds(0.5f);
-            Instantiate(Ball);
-            counter++;
+            while (counter < 3)
+            {
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(Ball);
+                counter++;
+            }
+            gameObject.SetActive(false);
         }
     }
 }

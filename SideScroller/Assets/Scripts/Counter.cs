@@ -11,7 +11,8 @@ public class Counter : MonoBehaviour
 
     private void start()
     {
-        counterText.text = numberCount.value.ToString();
+        numberCount.value = 0;
+        //counterText.text = numberCount.value.ToString();
     }
 
     void OnTriggerEnter2D() // physics based function
