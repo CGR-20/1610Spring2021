@@ -9,10 +9,9 @@ public class Counter : MonoBehaviour
     public IntData numberCount;
     public Text counterText;
 
-    private void start()
+    private void Start()
     {
         numberCount.value = 0;
-        //counterText.text = numberCount.value.ToString();
     }
 
     void OnTriggerEnter2D() // physics based function
