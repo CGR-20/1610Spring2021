@@ -5,6 +5,7 @@ using UnityEngine;
 public class PracticeLoops : MonoBehaviour
 {
     int counter = 0;
+    string[] names = { "Carlos", "Steve", "Alex" };
     void Start()
     {
         while (counter < 5)
@@ -12,5 +13,8 @@ public class PracticeLoops : MonoBehaviour
             print("Counter is at: " + counter);
             counter++;
         }
+
+        foreach (string i in names)
+            print("Hello, my name is " + i);
     }
 }
