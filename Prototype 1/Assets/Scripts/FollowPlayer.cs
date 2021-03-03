@@ -6,11 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
     public GameObject player; // allows us to tell the script to focus on the vehicle
     private Vector3 offset = new Vector3(0, 10, -12); // offsets camera so it's not inside the vehicle
-    void Start()
-    {
-        
-    }
-
+ 
     void Update()
     {
         transform.position = player.transform.position + offset; // updates the camera
