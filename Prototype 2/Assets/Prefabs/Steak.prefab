@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 1696102078700347479}
   - component: {fileID: 1696102078699279045}
   - component: {fileID: 9165683800879331395}
+  - component: {fileID: 114783253592053848}
   m_Layer: 0
-  m_Name: Food_Steak_01
+  m_Name: Steak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,4 +91,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56371754ae6e47408339c4e26ba53e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 20
+--- !u!114 &114783253592053848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696102078697322633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a20b6fab8d68d74bb2a2663869b2e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
