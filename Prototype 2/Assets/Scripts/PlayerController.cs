@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        hInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * hInput * Time.deltaTime * speed);
+        hInput = Input.GetAxis("Horizontal"); // gets user input
+        transform.Translate(Vector3.right * hInput * Time.deltaTime * speed); // moves player on input
 
         // keep player in bounds
         if (transform.position.x < -xRange)
@@ -21,9 +21,9 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x > xRange)
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
 
+        // launch food from player
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // launch food from player
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
     }

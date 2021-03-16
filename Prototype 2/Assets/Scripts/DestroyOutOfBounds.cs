@@ -8,9 +8,12 @@ public class DestroyOutOfBounds : MonoBehaviour
     private float lowerBound = -10; // this is for the animals
     void Update()
     {
-        if (transform.position.z > topBound)
+        if (transform.position.z > topBound) // stops projectile from continuing forever
             Destroy(gameObject);
-        else if (transform.position.z < lowerBound)
+        else if (transform.position.z < lowerBound) // if any animals make it past, they're erased
+        {
             Destroy(gameObject);
+            Debug.Log("Game Over!");
+        }  
     }
 }
