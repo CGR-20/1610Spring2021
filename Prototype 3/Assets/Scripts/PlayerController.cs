@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier;
     public bool isOnGround;
     public bool gameOver;
+    private Animator playerAnim;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody>(); // gets rigid body of whatever the script is attached to
+        playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier; // changes gravity of game
         isOnGround = true;
         gameOver = false;
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); // makes player jump
             isOnGround = false; // stops player from spamming jump
+            playerAnim.SetTrigger("Jump_trig"); // play jump animation
         }
     }
 
