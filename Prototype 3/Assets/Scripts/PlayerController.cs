@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround;
     public bool gameOver;
     private Animator playerAnim;
+    public ParticleSystem explosionParticle;
+    public ParticleSystem dirtParticle;
 
     void Start()
     {
@@ -22,11 +24,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        // when the player presses the space key, and they're both on the ground and there's no game over
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); // makes player jump
             isOnGround = false; // stops player from spamming jump
             playerAnim.SetTrigger("Jump_trig"); // play jump animation
+            dirtParticle.Stop(); // stop dirt animation when in the air
         }
     }
 
@@ -34,12 +38,19 @@ public class PlayerController : MonoBehaviour
     {
         // when player makes collision (ground), allow to jump again
         if (collision.gameObject.CompareTag("Ground"))
+        { 
             isOnGround = true;
+            dirtParticle.Play(); // play dirt animation when running on ground
+        }
         // when the player collides with obstacle, end game
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
             gameOver = true;
             Debug.Log("Game Over!");
+            playerAnim.SetBool("Death_b", true); // let game know that the player died
+            playerAnim.SetInteger("DeathType_int", 1); // play death animation
+            explosionParticle.Play(); // play explosion animation
+            dirtParticle.Stop(); // stop dirt animation when dead
         }
     }
 }
