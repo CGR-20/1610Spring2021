@@ -5,20 +5,27 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    private float spawnRange = 9; // controls area where enemy spawns at
-    public int enemiesToSpawn;
-    public int enemyCount;
+    public GameObject powerupPrefab;
+    private float spawnRange; // controls area where enemy spawns at
+    private int enemyCount;
+    private int waveNumber;
 
     void Start()
     {
-        
+        spawnRange = 9;
+        waveNumber = 1;
     }
 
     void Update()
     {
         enemyCount = FindObjectsOfType<Enemy>().Length; // keeps track of number of enemies
+        // resets entire playing field after each enemy wave
         if (enemyCount == 0)
-            SpawnEnemyWave(1);
+        {
+            Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
+            SpawnEnemyWave(waveNumber);
+            waveNumber++;
+        }  
     }
 
     private void SpawnEnemyWave(int enemies)

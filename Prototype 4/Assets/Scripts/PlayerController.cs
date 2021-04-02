@@ -46,8 +46,6 @@ public class PlayerController : MonoBehaviour
             Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
             // get launch direction relative/away to player
             Vector3 awayFromPlayer = (collision.gameObject.transform.position - transform.position);
-
-            Debug.Log("Collided with: " + collision.gameObject.name + " with powerup set to " + hasPowerup);
             // apply force to enemy
             enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
         }
