@@ -7,15 +7,18 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
     private float spawnRate;
     private int score;
+    public bool isGameActive;
 
     void Start()
     {
+        isGameActive = true;
         spawnRate = 2.0f;
         StartCoroutine(SpawnTarget());
         score = 0;
-        UpdateScore(0);
+        UpdateScore(score);
     }
 
     void Update()
@@ -25,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnTarget()
     {
-        while (true)
+        while (isGameActive)
         {
             // wait a bit
             yield return new WaitForSeconds(spawnRate);
@@ -33,13 +36,18 @@ public class GameManager : MonoBehaviour
             int index = Random.Range(0, targets.Count);
             // spawn target from array
             Instantiate(targets[index]);
-            UpdateScore(5);
         }
     }
 
-    private void UpdateScore(int scoreToAdd)
+    public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
+    }
+
+    public void GameOver()
+    {
+        gameOverText.gameObject.SetActive(true);
+        isGameActive = false;
     }
 }
