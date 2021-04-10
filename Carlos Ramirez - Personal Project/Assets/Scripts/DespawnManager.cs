@@ -13,7 +13,9 @@ public class DespawnManager : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.x < -despawnRange || transform.position.x > despawnRange)
+        if (transform.position.x < -despawnRange || transform.position.x > despawnRange
+            || transform.position.z < -despawnRange || transform.position.z > despawnRange
+            || transform.position.y < -despawnRange || transform.position.y > despawnRange)
             Destroy(gameObject);
     }
 }

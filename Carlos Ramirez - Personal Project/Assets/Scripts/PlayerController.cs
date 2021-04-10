@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>(); // gets rigid body of whatever the script is attached to
         Physics.gravity *= gravityModifier; // changes gravity of game
         isOnGround = true; // the player should start on the ground no matter what
-        offset = new Vector3(2, 0, 0);
+        offset = new Vector3(2, 0, 0); // projectile offset
     }
 
     void Update()
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         // keep player in bounds
         if (transform.position.x < -xRange)
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        if (transform.position.x > xRange)
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        //if (transform.position.x > xRange)
+            //transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
     }
 }

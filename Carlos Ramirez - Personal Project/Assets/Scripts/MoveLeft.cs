@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
-    private float speed = 30;
+    private PlayerController playerControllerScript;
+    public GameObject player;
+    private Vector3 playerXPos;
 
     void Start()
     {
-        
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * speed);
+        // move in relation to player
+        transform.position = new Vector3(-player.transform.position.x, 
+            transform.position.y, transform.position.z);
     }
 }
