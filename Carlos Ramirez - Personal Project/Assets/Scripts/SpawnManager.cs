@@ -6,20 +6,23 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject obstaclePrefab;
     public GameObject enemyPrefab;
+    private GameObject player;
     private Vector3 enemyPos = new Vector3(25, 1, 0);
     private Vector3 obstaclePos = new Vector3(0, 3, -2);
-    private float delayRate = 2.0f;
+    private Vector3 playerPos;
+    private Vector3 spacePos;
 
     void Start()
     {
         // keep creating obstacles
         //InvokeRepeating("SpawnObstacle", delayRate, delayRate);
+        player = GameObject.Find("Player");
+        spacePos = new Vector3(25, 0, 0);
     }
 
     void Update()
     {
-        //if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
-        //StartCoroutine(SpawnEnemy());
+        playerPos = player.transform.position;
         SpawnObstacle();
     }
 
@@ -27,7 +30,7 @@ public class SpawnManager : MonoBehaviour
     {
         // spawn obstacles in a row
         Instantiate(obstaclePrefab, obstaclePos, obstaclePrefab.transform.rotation);
-        obstaclePos = obstaclePos + new Vector3(25, 0, 0);
+        obstaclePos += new Vector3(25, 0, 0);
 
     }
 

@@ -5,12 +5,12 @@ using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
     private PlayerController playerControllerScript;
-    public GameObject player;
-    private Vector3 playerXPos;
+    private GameObject player;
 
     void Start()
     {
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+        player = GameObject.Find("Player");
     }
 
     void Update()

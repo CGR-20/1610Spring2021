@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     private float hInput; // recieves user input in the horizontal direction
     public float speed; // the speed at which the player moves
-    public float xRange; // the horizontal range that the player can move in
     public float jumpForce;
     public float gravityModifier;
     private bool isOnGround; // makes sure player can't jump infinitely
@@ -71,9 +70,7 @@ public class PlayerController : MonoBehaviour
     private void ConstrainPlayerPosition()
     {
         // keep player in bounds
-        if (transform.position.x < -xRange)
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        //if (transform.position.x > xRange)
-            //transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        if (transform.position.x < 0)
+            transform.position = new Vector3(0, transform.position.y, transform.position.z);
     }
 }
