@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class RepeatBackground : MonoBehaviour
 {
-    private Vector3 currentPos;
-    private GameObject player;
+    private Vector3 startPos;
+    private float repeatWidth;
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        startPos = transform.position; // the bg's current position is it's start position
+        repeatWidth = GetComponent<BoxCollider>().size.x / 2; // get accurate half x length of background
+
+        Debug.Log(startPos);
+        Debug.Log(repeatWidth);
     }
 
     void Update()
     {
-        currentPos = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
-        transform.position= currentPos;
+        // if the new bg position has passed a certain point on the left side, bring the bg back to the start
+        if (transform.position.x < startPos.x - repeatWidth)
+            transform.position = startPos;
     }
 }

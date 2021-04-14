@@ -12,13 +12,14 @@ public class PlayerController : MonoBehaviour
     private Vector3 offset;
 
     public GameObject projectilePrefab; // projectile prefab
+    public GameObject background;
     private Rigidbody playerRb;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody>(); // gets rigid body of whatever the script is attached to
         Physics.gravity *= gravityModifier; // changes gravity of game
-        isOnGround = true; // the player should start on the ground no matter what
+        //isOnGround = true; // the player should start on the ground no matter what
         offset = new Vector3(2, 0, 0); // projectile offset
     }
 
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMovement();
         PlayerActions();
-        ConstrainPlayerPosition();
+        //ConstrainPlayerPosition();
     }
 
     // whenever the player collides with anything, do the following
@@ -48,7 +49,9 @@ public class PlayerController : MonoBehaviour
     {
         // player movement
         hInput = Input.GetAxis("Horizontal"); // gets user input
-        transform.Translate(Vector3.right * hInput * Time.deltaTime * speed); // moves player on input
+        //transform.Translate(Vector3.right * hInput * Time.deltaTime * speed); // moves player on input
+        // move background and obstacles instead of player
+        background.transform.Translate(Vector3.right * -hInput * Time.deltaTime * speed);
     }
 
     private void PlayerActions()
@@ -66,11 +69,12 @@ public class PlayerController : MonoBehaviour
             Instantiate(projectilePrefab, transform.position + offset, projectilePrefab.transform.rotation);
         }
     }
-
+    /*
     private void ConstrainPlayerPosition()
     {
         // keep player in bounds
         if (transform.position.x < 0)
             transform.position = new Vector3(0, transform.position.y, transform.position.z);
     }
+    */
 }
