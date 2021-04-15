@@ -4,23 +4,11 @@ using UnityEngine;
 
 public class DespawnManager : MonoBehaviour
 {
-    private float despawnRange;
-    private GameObject player;
-    public float despawnDistance;
-
-    private void Start()
-    {
-        player = GameObject.Find("Player");
-        despawnDistance = 40;
-    }
+    public float despawnRange;
 
     void Update()
     {
-        despawnRange = player.transform.position.x + despawnDistance;
-
-        if (transform.position.x < -despawnRange || transform.position.x > despawnRange
-            || transform.position.z < -despawnRange || transform.position.z > despawnRange
-            || transform.position.y < -despawnRange || transform.position.y > despawnRange)
+        if (transform.position.x < -despawnRange || transform.position.x > despawnRange)
             Destroy(gameObject);
     }
 }

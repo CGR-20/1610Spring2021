@@ -4,54 +4,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float hInput; // recieves user input in the horizontal direction
-    public float speed; // the speed at which the player moves
     public float jumpForce;
     public float gravityModifier;
     private bool isOnGround; // makes sure player can't jump infinitely
     private Vector3 offset;
 
     public GameObject projectilePrefab; // projectile prefab
-    public GameObject background;
     private Rigidbody playerRb;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody>(); // gets rigid body of whatever the script is attached to
         Physics.gravity *= gravityModifier; // changes gravity of game
-        //isOnGround = true; // the player should start on the ground no matter what
         offset = new Vector3(2, 0, 0); // projectile offset
     }
 
     void Update()
     {
-        PlayerMovement();
         PlayerActions();
-        //ConstrainPlayerPosition();
-    }
-
-    // whenever the player collides with anything, do the following
-    private void OnCollisionEnter(Collision collision)
-    {
-        // when player makes collision (ground), allow to jump again
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isOnGround = true;
-        }
-
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void PlayerMovement()
-    {
-        // player movement
-        hInput = Input.GetAxis("Horizontal"); // gets user input
-        //transform.Translate(Vector3.right * hInput * Time.deltaTime * speed); // moves player on input
-        // move background and obstacles instead of player
-        background.transform.Translate(Vector3.right * -hInput * Time.deltaTime * speed);
     }
 
     private void PlayerActions()
@@ -69,12 +39,19 @@ public class PlayerController : MonoBehaviour
             Instantiate(projectilePrefab, transform.position + offset, projectilePrefab.transform.rotation);
         }
     }
-    /*
-    private void ConstrainPlayerPosition()
+
+    // whenever the player collides with anything, do the following
+    private void OnCollisionEnter(Collision collision)
     {
-        // keep player in bounds
-        if (transform.position.x < 0)
-            transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        // when player makes collision (ground), allow to jump again
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true;
+        }
+
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
-    */
 }

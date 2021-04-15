@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8178992166168157961}
   - component: {fileID: 8178992166168157966}
   - component: {fileID: 8178992166168157957}
-  - component: {fileID: 8178992166168157962}
   - component: {fileID: 8178992166168157956}
   m_Layer: 0
   m_Name: Enemy
@@ -111,19 +110,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!65 &8178992166168157962
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8178992166168157967}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8178992166168157956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8178992166168157967}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4df7e97b9c0c8114ca0feae9fb98b512, type: 3}
   m_Name: 
