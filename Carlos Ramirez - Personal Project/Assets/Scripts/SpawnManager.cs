@@ -6,32 +6,47 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject obstaclePrefab;
     public GameObject enemyPrefab;
-    private GameObject player;
-    private Vector3 enemyPos = new Vector3(25, 1, 0);
-    private Vector3 obstaclePos = new Vector3(0, 3, -2);
-    private Vector3 playerPos;
-    private Vector3 spacePos;
+    private Vector3 enemyPos;
+    private Vector3 obstaclePos;
+    private Vector3 mirrorPos;
+    private Vector3 spawnDistance;
+
+    public float obstaclePosX;
+    public float spawnDistanceX;
+    private float stopPosX;
 
     void Start()
     {
-        // keep creating obstacles
-        //InvokeRepeating("SpawnObstacle", delayRate, delayRate);
-        player = GameObject.Find("Player");
-        spacePos = new Vector3(25, 0, 0);
+        stopPosX = obstaclePosX;
+        obstaclePosX = -obstaclePosX;
+
+        //enemyPos = new Vector3(25, 1, 0);
+        obstaclePos = new Vector3(obstaclePosX, 2, -5);
+        spawnDistance = new Vector3(spawnDistanceX, 0, 0);
+        SpawnObstacle();
+
+        Debug.Log(obstaclePosX);
+        Debug.Log(spawnDistanceX);
+        Debug.Log(stopPosX);
+        Debug.Log(obstaclePos);
+        Debug.Log(spawnDistance);
     }
 
     void Update()
     {
-        playerPos = player.transform.position;
-        SpawnObstacle();
+        //mirrorPos = new Vector3(-obstaclePos.x, obstaclePos.y, obstaclePos.z);
+        //SpawnObstacle();
     }
 
     void SpawnObstacle()
     {
-        // spawn obstacles in a row
-        Instantiate(obstaclePrefab, obstaclePos, obstaclePrefab.transform.rotation);
-        obstaclePos += new Vector3(25, 0, 0);
-
+        while (stopPosX > obstaclePosX)
+        {
+            // spawn obstacles in a row
+            Instantiate(obstaclePrefab, obstaclePos, obstaclePrefab.transform.rotation);
+            //Instantiate(obstaclePrefab, mirrorPos, obstaclePrefab.transform.rotation);
+            obstaclePos += spawnDistance;
+        }
     }
 
     IEnumerator SpawnEnemy()

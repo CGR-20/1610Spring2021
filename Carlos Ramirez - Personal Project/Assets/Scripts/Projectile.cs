@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 5.0f; // speed at which the projectile moves
+    public float speed; // speed at which the projectile moves
 
     void Update()
     {

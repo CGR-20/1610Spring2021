@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae1e109e7d9ff64bb7e527f68eb85fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 35
 --- !u!114 &114753186744891470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,4 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5c21b6d0132204283bf67ea5ec1c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnRange: 30
+  despawnRange: 500
