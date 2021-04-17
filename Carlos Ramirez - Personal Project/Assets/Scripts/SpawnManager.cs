@@ -8,7 +8,6 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemyPrefab;
     private Vector3 enemyPos;
     private Vector3 obstaclePos;
-    private Vector3 mirrorPos;
     private Vector3 spawnDistance;
 
     public float obstaclePosX;
@@ -40,7 +39,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnObstacle()
     {
-        while (stopPosX > obstaclePosX)
+        if (stopPosX > obstaclePosX)
         {
             // spawn obstacles in a row
             Instantiate(obstaclePrefab, obstaclePos, obstaclePrefab.transform.rotation);
