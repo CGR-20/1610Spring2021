@@ -5,10 +5,19 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed; // speed at which the projectile moves
+    private PlayerController playerControllerScript;
+
+    void Start()
+    {
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+    }
 
     void Update()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * speed); // moves projectile
+        if (!playerControllerScript.faceLeft)
+            transform.Translate(Vector3.right * Time.deltaTime * speed); // moves projectile
+        else
+            transform.Translate(Vector3.left * Time.deltaTime * speed); // moves projectile
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -17,7 +26,7 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
 }
