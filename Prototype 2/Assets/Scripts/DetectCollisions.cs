@@ -6,7 +6,12 @@ public class DetectCollisions : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject); // this script is applied to the animals, so it deletes them
-        Destroy(other.gameObject); // the projectile is erased as well
+        // Instead of destroying the projectile when it collides with an animal
+        //Destroy(other.gameObject); 
+
+        // Just deactivate the food and destroy the animal
+        other.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
+
 }

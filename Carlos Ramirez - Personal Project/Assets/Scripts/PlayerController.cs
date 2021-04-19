@@ -54,9 +54,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (faceLeft)
-                Instantiate(projectilePrefab, transform.position + offsetLeft, projectilePrefab.transform.rotation);
+                Instantiate(projectilePrefab, transform.position + offsetLeft, 
+                    projectilePrefab.transform.rotation);
             else
-                Instantiate(projectilePrefab, transform.position + offsetRight, projectilePrefab.transform.rotation);
+                Instantiate(projectilePrefab, transform.position + offsetRight, 
+                    projectilePrefab.transform.rotation);
         }
     }
 

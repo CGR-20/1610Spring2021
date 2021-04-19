@@ -1126,9 +1126,9 @@ GameObject:
   - component: {fileID: 1910115128430563181}
   - component: {fileID: 1910115128437813815}
   - component: {fileID: 1910115128166916373}
-  - component: {fileID: 114912141315852498}
   - component: {fileID: 91265683335198972}
-  - component: {fileID: 114188628007593454}
+  - component: {fileID: 114507896334650276}
+  - component: {fileID: 114414917526589426}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -1190,18 +1190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!114 &114912141315852498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910115128430467387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a20b6fab8d68d74bb2a2663869b2e41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &91265683335198972
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1215,7 +1203,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.367628, y: 16.541004, z: 20.62859}
   m_Center: {x: 0.060658652, y: 8.010763, z: 1.4048364}
---- !u!114 &114188628007593454
+--- !u!114 &114507896334650276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1224,7 +1212,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1910115128430467387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb436048654d68d47b3cd37731989df0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c52ee72091692143869a36cdefe1fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114414917526589426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910115128430467387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e62e9a8a22fac478a927ce940e28f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1910115128430473809

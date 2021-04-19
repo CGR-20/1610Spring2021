@@ -4,16 +4,32 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
-    private float topBound = 20; // this is meant for the player projectile
-    private float lowerBound = -10; // this is for the animals
+    private float topBound = 30;
+    private float lowerBound = -10;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > topBound) // stops projectile from continuing forever
-            Destroy(gameObject);
-        else if (transform.position.z < lowerBound) // if any animals make it past, they're erased
+        if (transform.position.z > topBound)
         {
-            Destroy(gameObject);
+            // Instead of destroying the projectile when it leaves the screen
+            //Destroy(gameObject);
+
+            // Just deactivate it
+            gameObject.SetActive(false);
+
+        }
+        else if (transform.position.z < lowerBound)
+        {
             Debug.Log("Game Over!");
-        }  
+            Destroy(gameObject);
+        }
+
     }
 }

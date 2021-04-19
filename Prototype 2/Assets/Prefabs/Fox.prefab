@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5037549904358256541}
   - component: {fileID: 5037549904348885935}
   - component: {fileID: 5037549903766412702}
-  - component: {fileID: 114778218651428014}
   - component: {fileID: 3103067012768729376}
-  - component: {fileID: 114741979975122306}
+  - component: {fileID: 114693663108159876}
+  - component: {fileID: 114181791334644328}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -79,18 +79,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
---- !u!114 &114778218651428014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5037549904358334919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a20b6fab8d68d74bb2a2663869b2e41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3103067012768729376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.068645, y: 0.21922386, z: 0.3208964}
   m_Center: {x: -0.001622963, y: 0.10100247, z: 0.010599828}
---- !u!114 &114741979975122306
+--- !u!114 &114693663108159876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,7 +101,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5037549904358334919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb436048654d68d47b3cd37731989df0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c52ee72091692143869a36cdefe1fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114181791334644328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5037549904358334919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e62e9a8a22fac478a927ce940e28f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5037549904358337533

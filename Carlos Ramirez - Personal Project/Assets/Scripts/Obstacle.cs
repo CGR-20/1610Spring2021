@@ -15,23 +15,17 @@ public class Obstacle : MonoBehaviour
 
     void Update()
     {
-        ResetObstacle(resetPosX);
+        ResetObstacle();
     }
 
-    public void ResetObstacle(float resetPosX)
+    public void ResetObstacle()
     {
-        foreach (Transform child in obstacleManager.transform)
-        {
-            if (child.transform.position.x < -resetPosX || child.transform.position.x > resetPosX)
-                child.gameObject.SetActive(true);
+        // if the obstacle's position is too far to the left, reset it's position to the far right
+            if (transform.position.x < -resetPosX)
+            transform.position = new Vector3(resetPosX, transform.position.y, transform.position.z);
 
-            // if the obstacle's position is too far to the left, reset it's position to the far right
-            if (child.transform.position.x < -resetPosX)
-                child.transform.position = new Vector3(resetPosX, child.transform.position.y, child.transform.position.z);
-
-            // else if do the opposite, but move the obstacle to the far left
-            else if (child.transform.position.x > resetPosX)
-                child.transform.position = new Vector3(-resetPosX, child.transform.position.y, child.transform.position.z);
-        } 
+        // else if do the opposite, but move the obstacle to the far left
+        else if (transform.position.x > resetPosX)
+            transform.position = new Vector3(-resetPosX, transform.position.y, transform.position.z);
     }
 }
