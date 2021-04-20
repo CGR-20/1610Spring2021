@@ -7,12 +7,23 @@ public class MoveScene : MonoBehaviour
     private float hInput;
     public float speed;
 
-    void Update()
+    private PlayerController playerControllerScript;
+    private bool gameOver;
+
+    void Start()
     {
-        ScrollScene();
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
-    private void ScrollScene()
+    void Update()
+    {
+        gameOver = playerControllerScript.gameOver;
+
+        if (!gameOver)
+            ScrollScene();
+    }
+
+    public void ScrollScene()
     {
         // player movement
         hInput = Input.GetAxis("Horizontal");

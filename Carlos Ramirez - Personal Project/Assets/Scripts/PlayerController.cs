@@ -19,6 +19,15 @@ public class PlayerController : MonoBehaviour
     private Quaternion startRotation;
 
     public bool faceLeft;
+    public bool gameOver;
+
+    private AudioSource cameraAudio;
+    private AudioSource playerAudio;
+    private Animator playerAnim;
+    public AudioClip crashSound;
+    public AudioClip jumpSound;
+    public AudioClip projectileSound;
+    public ParticleSystem dirtParticle;
 
     void Start()
     {
@@ -32,27 +41,38 @@ public class PlayerController : MonoBehaviour
 
         startRotation = transform.rotation; // keep track of original direction
         rotation = new Vector3(0, 180, 0); // amount of rotation the player makes
+
+        gameOver = false;
+        cameraAudio = Camera.main.GetComponent<AudioSource>();
+        playerAnim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        PlayerActions();
-        PlayerDirection();
+            PlayerActions();
+            PlayerDirection();
     }
 
     // actions that the player is able to perform
     private void PlayerActions()
     {
         // when the player presses the space key, and they're on the ground, jump
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isOnGround)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isOnGround && !gameOver)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); // makes player jump
             isOnGround = false; // stops player from spamming jump
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
+            dirtParticle.Stop();
+            playerAnim.SetTrigger("Jump_trig");
         }
 
         // launch projectile from player
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            playerAudio.PlayOneShot(projectileSound, 1.0f);
+
+            // I may need to limit projectile amount
             if (faceLeft)
                 Instantiate(projectilePrefab, transform.position + offsetLeft, 
                     projectilePrefab.transform.rotation);
@@ -88,11 +108,18 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+            dirtParticle.Play();
         }
 
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
+            gameOver = true;
+            cameraAudio.Stop();
+            playerAnim.SetBool("Death_b", true);
+            playerAnim.SetInteger("DeathType_int", 1);
+            playerAudio.PlayOneShot(crashSound, 1.0f);
+            dirtParticle.Stop();
         }
     }
 }
