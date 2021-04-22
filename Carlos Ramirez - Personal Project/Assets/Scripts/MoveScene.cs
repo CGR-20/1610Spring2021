@@ -28,6 +28,14 @@ public class MoveScene : MonoBehaviour
         // player movement
         hInput = Input.GetAxis("Horizontal");
 
+        if (hInput == 0)
+        {
+            playerControllerScript.dirtParticle.Play();
+        }
+
+        // sets player animation to match movement speed
+        playerControllerScript.playerAnim.SetFloat("Speed_f", Mathf.Abs(hInput));
+
         // move stuff
         transform.Translate(Vector3.right * -hInput * Time.deltaTime * speed);
     }

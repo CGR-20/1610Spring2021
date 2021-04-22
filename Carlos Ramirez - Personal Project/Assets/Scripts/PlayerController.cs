@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private AudioSource cameraAudio;
     private AudioSource playerAudio;
-    private Animator playerAnim;
+    public Animator playerAnim;
     public AudioClip crashSound;
     public AudioClip jumpSound;
     public AudioClip projectileSound;
@@ -50,34 +50,38 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!gameOver)
+        {
             PlayerActions();
             PlayerDirection();
+        }
     }
 
     // actions that the player is able to perform
     private void PlayerActions()
     {
         // when the player presses the space key, and they're on the ground, jump
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isOnGround && !gameOver)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isOnGround)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); // makes player jump
             isOnGround = false; // stops player from spamming jump
             playerAudio.PlayOneShot(jumpSound, 1.0f);
             dirtParticle.Stop();
-            playerAnim.SetTrigger("Jump_trig");
+            playerAnim.SetBool("Jump_b", true);
         }
 
         // launch projectile from player
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerAudio.PlayOneShot(projectileSound, 1.0f);
+            playerAnim.SetBool("Shoot_b", true);
 
             // I may need to limit projectile amount
             if (faceLeft)
-                Instantiate(projectilePrefab, transform.position + offsetLeft, 
+                Instantiate(projectilePrefab, transform.position + offsetLeft,
                     projectilePrefab.transform.rotation);
             else
-                Instantiate(projectilePrefab, transform.position + offsetRight, 
+                Instantiate(projectilePrefab, transform.position + offsetRight,
                     projectilePrefab.transform.rotation);
         }
     }
@@ -108,16 +112,15 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+            playerAnim.SetBool("Jump_b", false); // player is no longer jumping
             dirtParticle.Play();
         }
 
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Obstacle"))
         {
-            Destroy(gameObject);
             gameOver = true;
             cameraAudio.Stop();
             playerAnim.SetBool("Death_b", true);
-            playerAnim.SetInteger("DeathType_int", 1);
             playerAudio.PlayOneShot(crashSound, 1.0f);
             dirtParticle.Stop();
         }
