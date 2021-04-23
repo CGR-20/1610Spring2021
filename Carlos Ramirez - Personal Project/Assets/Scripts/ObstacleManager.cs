@@ -8,6 +8,15 @@ public class ObstacleManager : MonoBehaviour
     private Obstacle obstacleScript; 
     private float resetPosX;
 
+    public AudioClip explosionSound;
+    private AudioSource projectileAudio;
+    //public ParticleSystem explosionParticle;
+
+    private void Start()
+    {
+        projectileAudio = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         obstacleScript = obstacle.GetComponent<Obstacle>();
@@ -19,6 +28,12 @@ public class ObstacleManager : MonoBehaviour
     {
         foreach (Transform child in this.transform)
         {
+            if (!child.gameObject.activeSelf)
+            {
+                projectileAudio.PlayOneShot(explosionSound, 1.0f);
+                //explosionParticle.Play();
+            }
+ 
             yield return new WaitForSeconds(3);
             if (!child.gameObject.activeSelf)
             {

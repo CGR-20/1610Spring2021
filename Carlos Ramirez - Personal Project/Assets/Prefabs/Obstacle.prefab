@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2421263724865835165}
   - component: {fileID: 2421263724865835154}
   m_Layer: 0
-  m_Name: Obstacle 1
+  m_Name: Obstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,4 +136,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetPosX: 260
-  obstacleManager: {fileID: 0}

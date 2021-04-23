@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.Rotate(rotation); // rotates player
             faceLeft = true;
+            
         }
 
         // else if, do the opposite from the action above and look right

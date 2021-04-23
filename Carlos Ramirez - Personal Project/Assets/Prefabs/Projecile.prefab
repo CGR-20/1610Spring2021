@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
+  explosionSound: {fileID: 8300000, guid: eb8998f3b3d3a49db96a634bf39ed153, type: 3}
+  explosionParticle: {fileID: 19861012, guid: 0f75f6db4a318f54382e0c98b2226db8, type: 3}
 --- !u!114 &8019303216129227621
 MonoBehaviour:
   m_ObjectHideFlags: 0
