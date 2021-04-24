@@ -10,7 +10,7 @@ public class ObstacleManager : MonoBehaviour
 
     public AudioClip explosionSound;
     private AudioSource projectileAudio;
-    //public ParticleSystem explosionParticle;
+    public ParticleSystem explosionParticle;
 
     private void Start()
     {
@@ -28,13 +28,9 @@ public class ObstacleManager : MonoBehaviour
     {
         foreach (Transform child in this.transform)
         {
-            if (!child.gameObject.activeSelf)
-            {
-                projectileAudio.PlayOneShot(explosionSound, 1.0f);
-                //explosionParticle.Play();
-            }
- 
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(3); // wait to reactive obstacle
+            
+            // if the obstacle is not active, activate it
             if (!child.gameObject.activeSelf)
             {
                 child.gameObject.SetActive(true);
@@ -43,4 +39,16 @@ public class ObstacleManager : MonoBehaviour
             }
         }     
     }
+    /*
+    public void CollisionDetected(Obstacle obstaclescript)
+    {
+        // keeps track of collision of children
+        if (obstacleScript.gameObject.CompareTag("Projectile"))
+        {
+            Debug.Log("Child collided with player");
+            //projectileAudio.PlayOneShot(explosionSound, 1.0f);
+            //explosionParticle.Play();
+        }
+    }
+    */
 }
