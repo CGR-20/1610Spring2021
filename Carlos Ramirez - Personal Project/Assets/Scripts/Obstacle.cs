@@ -31,6 +31,8 @@ public class Obstacle : MonoBehaviour
         // else if do the opposite, but move the obstacle to the far left
         else if (transform.position.x > resetPosX)
             transform.position = new Vector3(-resetPosX, transform.position.y, transform.position.z);
+
+
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -39,9 +41,9 @@ public class Obstacle : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Projectile"))
         {
-            Debug.Log("Child collided with player");
+            Debug.Log("Obstacle collided with projectile");
             projectileAudio.PlayOneShot(explosionSound, 1.0f);
-            explosionParticle.Play();
+            //explosionParticle.Play();
         }
     }
 }

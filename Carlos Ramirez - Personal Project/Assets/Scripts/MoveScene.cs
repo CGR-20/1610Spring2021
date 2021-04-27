@@ -8,11 +8,13 @@ public class MoveScene : MonoBehaviour
     public float speed;
 
     private PlayerController playerControllerScript;
+    private Rigidbody rB;
     private bool gameOver;
 
     void Start()
     {
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+        rB = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -21,6 +23,8 @@ public class MoveScene : MonoBehaviour
 
         if (!gameOver)
             ScrollScene();
+        else
+            rB.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     public void ScrollScene()
@@ -29,9 +33,7 @@ public class MoveScene : MonoBehaviour
         hInput = Input.GetAxis("Horizontal");
 
         if (hInput == 0)
-        {
             playerControllerScript.dirtParticle.Play();
-        }
 
         // sets player animation to match movement speed
         playerControllerScript.playerAnim.SetFloat("Speed_f", Mathf.Abs(hInput));

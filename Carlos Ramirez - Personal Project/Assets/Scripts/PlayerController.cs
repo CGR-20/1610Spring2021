@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
         startRotation = transform.rotation; // keep track of original direction
         rotation = new Vector3(0, 180, 0); // amount of rotation the player makes
+        isOnGround = false;
 
         gameOver = false;
         cameraAudio = Camera.main.GetComponent<AudioSource>();
@@ -70,8 +71,8 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("Jump_b", true);
         }
 
-        // launch projectile from player
-        if (Input.GetKeyDown(KeyCode.Space))
+        // launch projectile from player as long as there isn't another on screen
+        if (Input.GetKeyDown(KeyCode.Space) && GameObject.FindGameObjectsWithTag("Projectile").Length == 0)
         {
             playerAudio.PlayOneShot(projectileSound, 1.0f);
             playerAnim.SetBool("Shoot_b", true);
