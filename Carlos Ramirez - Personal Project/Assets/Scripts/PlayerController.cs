@@ -77,7 +77,6 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(projectileSound, 1.0f);
             playerAnim.SetBool("Shoot_b", true);
 
-            // I may need to limit projectile amount
             if (faceLeft)
                 Instantiate(projectilePrefab, transform.position + offsetLeft,
                     projectilePrefab.transform.rotation);
