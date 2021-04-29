@@ -224,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!198 &159580081
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5265,80 +5265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ec1300bbf1d95498ffa2db7be93478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &810578609
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 227683170094489325, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: speed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4463757695414026039, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_Name
-      value: Projecile
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466220611068589101, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1f186fa644d91344ea819fdaeb9b4e3a, type: 3}
 --- !u!1 &849526217 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100066, guid: 70ab0d3e71b54ac4bbd703cb0a686c4d,
@@ -5396,7 +5322,7 @@ MonoBehaviour:
   crashSound: {fileID: 8300000, guid: 07f1ca4d96bca46dbbaa5f4483f7a48a, type: 3}
   jumpSound: {fileID: 8300000, guid: 72879285ded844717bde060c8c6c6128, type: 3}
   projectileSound: {fileID: 8300000, guid: 4a812d476bd234fcdad7cc31ff6e9473, type: 3}
-  dirtParticle: {fileID: 1944013002}
+  dirtParticle: {fileID: 0}
 --- !u!82 &849526221
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5968,7 +5894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1928790170
 Transform:
   m_ObjectHideFlags: 0
@@ -10558,7 +10484,7 @@ PrefabInstance:
     - target: {fileID: 3003534564182924474, guid: ea9b30c8785db7d46ad09e0bca4c93e0,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3003534564183088022, guid: ea9b30c8785db7d46ad09e0bca4c93e0,
         type: 3}
@@ -10687,7 +10613,7 @@ PrefabInstance:
     - target: {fileID: 4972224258730459693, guid: 8b3272d6c0f72e246a581440f5a799ab,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b3272d6c0f72e246a581440f5a799ab, type: 3}

@@ -3,7 +3,14 @@ guid: b06808f1e67c97e4b920ef7f17baba24
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - projectilePrefab: {fileID: 4463757695414026039, guid: 1f186fa644d91344ea819fdaeb9b4e3a,
+      type: 3}
+  - playerAnim: {instanceID: 0}
+  - crashSound: {fileID: 8300000, guid: 07f1ca4d96bca46dbbaa5f4483f7a48a, type: 3}
+  - jumpSound: {fileID: 8300000, guid: 72879285ded844717bde060c8c6c6128, type: 3}
+  - projectileSound: {fileID: 8300000, guid: 4a812d476bd234fcdad7cc31ff6e9473, type: 3}
+  - dirtParticle: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

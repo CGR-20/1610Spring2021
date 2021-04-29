@@ -14,18 +14,16 @@ public class Projectile : MonoBehaviour
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         projectileRb = GetComponent<Rigidbody>();
 
-        projectileRb.AddForce(projectileRb.transform.right * speed);
         Destroy(gameObject, 3f); // safety precaution so that projectile is destroyed in three seconds
     }
 
     void Update()
     {
-        /*
+        // if the player is not facing left, shoot to the right
         if (!playerControllerScript.faceLeft)
-            transform.Translate(Vector3.right * Time.deltaTime * speed); // moves projectile
+            projectileRb.AddForce(projectileRb.transform.right * speed);
         else
-            transform.Translate(Vector3.left * Time.deltaTime * speed); // moves projectile
-        */
+            projectileRb.AddForce(-projectileRb.transform.right * speed);
     }
 
     private void OnCollisionEnter(Collision collision)
